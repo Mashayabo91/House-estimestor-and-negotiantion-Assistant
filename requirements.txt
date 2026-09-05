@@ -1,0 +1,7 @@
+gradio
+groq
+xgboost
+scikit-learn
+pandas
+numpy
+kagglehub
