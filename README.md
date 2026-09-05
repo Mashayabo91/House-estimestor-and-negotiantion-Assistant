@@ -1,23 +1,17 @@
-# 🏠 Rental Price Estimator & Negotiation Assistant
+---
+title: Rental Price Estimator & Negotiation Assistant
+emoji: 🏠
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "5.0.0"
+python_version: "3.10"
+app_file: app.py
+pinned: false
+---
 
-## Overview
-An intelligent system that predicts fair rent prices and generates 
-AI-powered negotiation talking points for renters.
+# Rental Price Estimator & Negotiation Assistant
 
-## How It Works
-1. Enter property details (BHK, size, city, furnishing status)
-2. Enter the listed rent price
-3. Get instant fair market rent prediction
-4. Receive AI-generated negotiation advice powered by Groq LLM
+An AI-powered rental price prediction and negotiation assistant.
 
-## Tech Stack
-- XGBoost for rent price prediction
-- Random Forest for price classification
-- Groq LLM for negotiation advice generation
-- Gradio for the user interface
-
-## Dataset
-House Rent Prediction Dataset from Kaggle
-
-## Author
-Built by Sanusi Mohammed
+This application uses machine learning to estimate rental prices and provides an AI-powered negotiation assistant using Groq.
