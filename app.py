@@ -113,9 +113,13 @@ def classify_listing(actual_rent, predicted_rent):
 def generate_negotiation_points(bhk, size, city, furnishing_status,
                                  actual_rent, predicted_rent, label, pct_diff):
     GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
-    client = Groq(api_key=GROQ_API_KEY)
 
-    prompt = f"""
+if not GROQ_API_KEY:
+    return "Error: GROQ_API_KEY is not configured in Hugging Face Secrets."
+
+client = Groq(api_key=GROQ_API_KEY)
+
+prompt = f"""
     You are a professional real estate negotiation advisor.
 
     A renter is considering this property:
@@ -136,7 +140,7 @@ def generate_negotiation_points(bhk, size, city, furnishing_status,
     """
 
     response = client.chat.completions.create(
-        model="llama3-8b-8192",
+        model="model="llama-3.1-8b-instant"",
         messages=[
             {
                 "role": "system",
@@ -208,4 +212,4 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=7860)
